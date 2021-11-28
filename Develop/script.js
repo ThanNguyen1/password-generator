@@ -1,13 +1,24 @@
-// Assignment code here
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  console.log("Hey you clicked the button");
 // 1. prompts user for password criteria
+  var confirmLength = window.prompt(
+    "Choose the character length of your password (enter in a number between 8 to 128)"
+  );
+  
+  console.log(confirmLength);
+  //    a. password length 8 > 128 characters. has to be a #
+    if (confirmLength === "" || confirmLength === null)
+    {
+      window.alert("Please choose a number between 8 up to 128");
+      return generatePassword();
 
-//    a. password length 8 > 128 characters
+    } else if (confirmLength < 8 || confirmLength > 128)
+    {
+      window.alert("Please choose a number between 8 up to 128");
+      return generatePassword();
+    }
 //    b. lowercase, uppercase, numbers, special characters
 // 2. Validate the input.
 // 3. Generate password based on inputs
