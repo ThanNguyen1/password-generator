@@ -32,13 +32,13 @@ function generatePassword() {
       confirmUppercase = window.prompt ("Would you like to include UPPERCASED characters?");
       confirmCharacter = window.prompt ("Would you like to have special characters included?");
     }
-// 2. Validate the input.
-    var passwordInfo = {
-      number = confirmNumber,
-      lowercase = confirmLowercase,
-      uppercase = confirmUppercase,
-      character = confirmCharacter
-    }
+// // 2. Validate the input.
+//     // var passwordInfo = {
+//     //   number = confirmNumber,
+//     //   lowercase = confirmLowercase,
+//     //   uppercase = confirmUppercase,
+//     //   character = confirmCharacter
+//     }
 
 // 3. Generate password based on inputs
     for (var i = 0; i <=passwordInfo; i++){
