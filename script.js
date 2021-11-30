@@ -14,34 +14,29 @@ function generatePassword() {
   let password = "";
 
   //    a. password length 8 > 128 characters. has to be a #
-    if (confirmLength === "" || confirmLength === null)
+    if (confirmLength === "" || confirmLength === null 
+    || confirmLength < 8 || confirmLength > 128 
+    || Number.isNaN(confirmLength))
     {
       window.alert("Please choose a number between 8 up to 128");
-      return generatePassword();
-
-    } else if (confirmLength < 8 || confirmLength > 128)
-    {
-      // window.alert("Please choose a number between 8 up to 128");
-      confirmLength = parseInt(window.alert("Please choose a number between 8 up to 128"));
       return generatePassword();
     }
 //    b. lowercase, uppercase, numbers, special characters
     else {
-      confirmNumber = window.prompt ("Would you like to include numbers in your password?");
-      confirmLowercase = window.prompt ("Would you like to include lowercased characters?");
-      confirmUppercase = window.prompt ("Would you like to include UPPERCASED characters?");
-      confirmCharacter = window.prompt ("Would you like to have special characters included?");
+      confirmNumber = window.prompt ("Would you like to include numbers in your password? Click OK for YES, CANCEL for NO");
+      confirmLowercase = window.prompt ("Would you like to include lowercased characters? Click OK for YES, CANCEL for NO" );
+      confirmUppercase = window.prompt ("Would you like to include UPPERCASED characters? Click OK for YES, CANCEL for NO");
+      confirmCharacter = window.prompt ("Would you like to have special characters included? Click OK for YES, CANCEL for NO");
     }
-// // 2. Validate the input.
-//     // var passwordInfo = {
-//     //   number = confirmNumber,
-//     //   lowercase = confirmLowercase,
-//     //   uppercase = confirmUppercase,
-//     //   character = confirmCharacter
-//     }
-
+// 2. Validate the input.
+    if (confirmCharacter){
+     var characterList = "!@#$%^&*()"
+    }
 // 3. Generate password based on inputs
-    for (var i = 0; i <=passwordInfo; i++){
+    for (var i = 0; i <=confirmLength; i++){
+      let randomCharacterIndex = Math.floor(Math.random() * characterList.length);
+      // add another var to 38
+      var newvalue = characterList[randomCharacterIndex];
     }
 // 4. Display password to the page. 
   return password;
