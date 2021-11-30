@@ -5,13 +5,8 @@ function generatePassword() {
   // 1. prompts user for password criteria
   var confirmLength = parseInt(window.prompt(
     "Choose the character length of your password (enter in a number between 8 to 128)"
-  ));
-  
+  ));  
   console.log(confirmLength);
-
-  // Possible password values
-  let values = "";
-  let password = "";
 
   //    a. password length 8 > 128 characters. has to be a #
     if (confirmLength === "" || confirmLength === null 
@@ -23,14 +18,23 @@ function generatePassword() {
     }
 //    b. lowercase, uppercase, numbers, special characters
     else {
-      confirmNumber = window.prompt ("Would you like to include numbers in your password? Click OK for YES, CANCEL for NO");
-      confirmLowercase = window.prompt ("Would you like to include lowercased characters? Click OK for YES, CANCEL for NO" );
-      confirmUppercase = window.prompt ("Would you like to include UPPERCASED characters? Click OK for YES, CANCEL for NO");
-      confirmCharacter = window.prompt ("Would you like to have special characters included? Click OK for YES, CANCEL for NO");
+      confirmNumber = window.prompt ("Would you like to include numbers in your password? Click OK for YES or CANCEL for NO");
+      confirmLowercase = window.prompt ("Would you like to include lowercased characters? Click OK for YES or CANCEL for NO" );
+      confirmUppercase = window.prompt ("Would you like to include UPPERCASED characters? Click OK for YES or CANCEL for NO");
+      confirmCharacter = window.prompt ("Would you like to have special characters included? Click OK for YES or CANCEL for NO");
     }
 // 2. Validate the input.
     if (confirmCharacter){
-     var characterList = "!@#$%^&*()"
+      var characterList = "#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+    }
+    else if (confirmLowercase){
+      var lowercaseList = "abcdefghijklmnopqrstuvwxyz"
+    }
+    else if (confirmUppercase) {
+      var uppercaseList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    }
+    else if (confirmNumber) {
+      var numberList = "1234567890"
     }
 // 3. Generate password based on inputs
     for (var i = 0; i <=confirmLength; i++){
